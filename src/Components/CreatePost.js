@@ -17,7 +17,8 @@ const CreatePost = () => {
     await addDoc(postControllerRef, {
       title,
       post,
-      Author: { name: auth.currentUser.displayName, id:auth.currentUser.uid }
+      Author_name:auth.currentUser.displayName,
+      Author_id:auth.currentUser.uid 
     });
     navigate("/");
   };
@@ -28,7 +29,7 @@ const CreatePost = () => {
    }
  
   
- }, [])
+ })
  
   return (
     <div className="container py-5 text-center">
